@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="regi.css">
+        <title>sign up</title>   
+    </head>
+    <body id="regi">
+        <a href="main.html"><img src="icons8-home-64.png"></a>
+        <div class="cont">
+            <form>
+                <div  class="mai">
+                    <div class="flex">
+                        <div>
+                        <p>first name</p>
+                        <input id="fn">
+                        </div>
+                        <div>
+                            <p>second name</p>
+                            <input id="ln">
+                        </div>
+                    </div>
+                    <p class="error"></p>
+                </div>
+                <div  class="mai">
+                    <p>E-mail</p>
+                    <input class="full" id="mail">
+                    <p class="error"></p>
+                </div>
+                <div  class="mai">
+                    <p>password</p>
+                    <input class="full" id="pass">
+                    <p class="error"></p>
+                </div>
+                <div  class="mai">
+                    <p>mobile phone number</p>
+                    <input class="full" id="num">
+                    <p class="error"></p>
+                </div>
+                <div  class="mai">
+                    <p>adress</p>
+                    <input class="full" id="add">
+                    <p class="error"></p>
+                </div>
+                <div  class="mai">
+                    <p>gender</p>
+                    <div class="flex">
+                        <div>
+                            <input type="radio" value="male" name="gender" id="ma">male
+                        </div>
+                        <div>
+                            <input type="radio" value="female" name="gender" id="fe" >female
+                        </div>
+                    </div>
+                    <p class="error"></p>
+                </div>
+                <button onclick="sign()">signu p</button>
+            </form>
+        </div>
+        <script>
+            document.querySelector("button").addEventListener("click", function (event) {
+                event.preventDefault();});
+                var error = document.getElementsByClassName("error");
+            function nameChecker(){
+                var fn= document.getElementById("fn").value;
+                var ln=document.getElementById("ln").value;
+                if(fn.length==0 ||ln.length==0){
+                    error[0].textContent="this name is not vaild"
+                }
+                else{
+                    error[0].textContent=""
+                }                
+            }
+            function mailChecker(){
+              var mail = document.getElementById("mail").value;
+              var re = /\S+@\S+\.\S+/;
+              if (!re.test(mail)){
+                  error[1].innerHTML="invalid email"   
+              }
+              else{
+                error[1].innerHTML=""
+              }   
+            }
+            function passwordChecker(){
+                error[2].innerHTML=""
+                var v=0;
+                var s=0;
+                var pass = document.getElementById("pass").value;
+                if(pass.length!=8){
+                        error[2].innerHTML="the password must include 8 characters no more no less"
+                    }
+                for(var i=0;i<pass.length;i++){
+                    if(pass.length!=8){
+                        error[2].innerHTML="the password must include 8 characters no more no less"
+                        break;
+                    }
+                    if(pass[0]!=(pass[0]).toUpperCase()){
+                        error[2].innerHTML="The password must start with an uppercase"
+                        break;
+                    }
+                    if(pass[i]==" "){
+                        error[2].innerHTML="No white spaces allowed in the password"
+                        break;
+                    }
+                    if(!isNaN(pass[i])){
+                        v++;
+                    }      
+                    if(v==0){
+                        error[2].innerHTML="the password must include one digit at least."
+                    }
+                    else{
+                        error[2].innerHTML=""
+                    }
+                    if(pass[i]=="!"||pass[i]=="@"||pass[i]=="_"||pass[i]=="*"||pass[i]=="-"||pass[i]=="&"||pass[i]=="%"||pass[i]=="$"||pass[i]=="#"){
+                        s++;                    
+                    }
+                    if(s==0){
+                        error[2].innerHTML="the password must include one special character like - , _ , #,&, and "  
+                    }
+                }
+            }
+            function phoneCheck(){
+                error[3].innerHTML=""
+                var phone=document.getElementById("num").value;
+                if(phone.length==0){
+                    error[3].innerHTML="plese enter your phone number"
+                }             
+                for(var j=0;j<phone.length;j++){     
+                if(phone.length!=10){
+                    error[3].innerHTML="the phone number has only 10 digits"
+                    break;
+                }
+                    if(isNaN(phone[j])){
+                        error[3].innerHTML="that is not a valid phone number"
+                    } 
+                }
+            }
+            function addressCheck(){
+                var add=document.getElementById("add").value
+                if(add.length==0){
+                    error[4].innerHTML="that's not a valid addres" 
+                }
+                else{
+                    error[4].innerHTML=""
+                }
+            }
+            function genderChecker(){
+                var ma=document.getElementById("ma").checked
+                var fe=document.getElementById("fe").checked
+                if(ma==0&&fe==0){
+                    error[5].innerHTML="you must choose your gender"
+                }
+                else{
+                    error[5].innerHTML=""
+                }
+            }
+            function popUp(){
+                var p=0
+                for(var t=0;t<error.length;t++){
+                    if(error[t].innerHTML!=""){
+                        p++
+                    }
+                }
+                if(p==0){
+                        alert("you have signed up!");
+                    }
+            }
+            function sign(){                
+                nameChecker();              
+                mailChecker();
+                passwordChecker()
+                phoneCheck();
+                addressCheck();
+                genderChecker();
+                popUp();
+                }
+            
+
+        </script>
+    </body>
+</html>

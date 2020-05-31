@@ -1,0 +1,274 @@
+/*the main them*/
+*{
+   margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif; 
+}
+body{
+   background-color: rgba(246, 144, 144, 0.048); 
+}
+ul{
+    display: flex;
+    list-style-type: none;
+    background-color:  rgb(240, 148, 148);
+
+    height: 70px;
+    justify-content: space-around;
+    align-items: center;
+    /*text-transform: uppercase;*/    
+}
+li{
+    width:170px;
+    overflow: hidden;
+    height: 100%;
+}
+li  a {
+    float: left;
+    display: block;
+    color:whitesmoke;
+    text-align: center;
+    padding: 15px 16px 16px 3px;
+    text-decoration: none;
+    font-size: 30px;
+    height: 100%;
+    width: 100%;
+  }
+li a:hover {
+    background-color: rgb(206, 112, 112);
+    color:rgb(184, 61, 61);
+  }
+ /* the active page */ 
+#act{
+    background-color: rgb(201, 63, 63);
+    padding: 0px;
+    margin: 0px; 
+}
+.cont{
+    display: flex;
+    justify-content: space-between;
+    margin: 80px;
+    font-size: 20px;
+}
+.cont img{
+    height: 400px;
+}
+p .cont{
+    margin: 40px;
+    padding:  40px;
+    width: 350px;
+}
+h1{
+    margin-bottom: 20px;
+}
+/* style for the home page*/
+
+header{
+    background-image: url(jakub-kapusnak-sDbj1dFlFPU-unsplash.jpg);
+    background-size: cover;
+    background-attachment: scroll;
+    height: 400px;
+    text-align: center;
+    text-align-last:center;
+    background-position: center;
+    opacity: .9;
+    fill-opacity: .9;
+    color: rgb(173, 0, 0);
+}
+.tit{
+    padding-top: 170px;
+    font-size: 150px;
+}
+.fillMain{
+    padding-top:60px;
+    text-align:center;
+}
+.ffi{
+    width: 400px;
+    text-align: center;
+    font-weight: bold;
+    padding-left:34% ;
+}
+/* style for the fruit page*/
+#fruit{
+   
+    color:rgb(184, 61, 61);
+}
+/*style for meat page */
+#meat{
+    color:rgb(184, 61, 61);
+}
+.titl{
+    padding-top: 70px;
+    font-size: 60px;
+    text-align: center;
+    color:rgb(184, 61, 61) ;
+}
+#g {
+    display: flex;    
+}
+
+#g .im {
+    height: 300px;
+    background-size: cover;
+    width: 100%;
+}
+
+#g .ma {
+    border: .7px solid rgb(82, 7, 7);
+    text-decoration: none;
+    margin: 2px;
+    font-family: cursive;
+    color: rgb(110, 3, 3);
+    width: 24.99%;
+}
+div .des {
+    /*display: flex;*/
+    padding: 20px;
+    text-align: center;
+  }
+.ma:hover{
+    opacity: .6;
+}
+ /*style for bread page*/
+ table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 30px;
+    min-width: 500px;
+    color: rgb(121, 21, 25);
+    top:50%;
+    left:50%;
+    box-sizing: border-box;
+    transform: translate(90%,30%);
+ } 
+ table thead tr{
+     color: rgb(255, 240, 250);
+     background-color:rgb(184, 61, 61) ;
+     text-align: left;
+ }
+ table th,table td{
+     padding: 12px 15px;
+ }
+ table tbody tr{
+     border-bottom:1px solid #eeecec ;
+ }
+ table tbody tr:nth-of-type(even){
+     background-color: #b1b1b1;
+ }
+ /*style for the registration form*/
+ #regi{
+     background-image: url("brian-jimenez-ch-mPpglKjQ-unsplash.jpg");
+     background-size: cover;
+    background-attachment: scroll;
+    font-size: 30px;
+ }
+ .regi{
+    height:600px;
+    width: 600px;
+    background-color: rgb(0,0,0,0.4);
+    border-radius: 15%;
+    position:absolute;
+    color: #fff;
+    top:50%;
+    left:50%;
+    box-sizing: border-box;
+    transform: translate(-50%,-50%);
+    padding: 70px 30px;
+ }
+ input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+input[type="username"],[type="password"]{
+    border: none;
+    border-bottom: 1px solid rgb(209, 208, 208);
+    background: transparent;
+    height: 40px;
+    font-size: 14px;
+    font-family: cursive;
+    
+}
+input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #92b7fdc8;
+    color:#fff;
+    font-size: 18px;
+    border-radius: 20px;
+    font-family: cursive;
+}
+input[type="submit"]:hover{
+    cursor: pointer;
+    background: #6298fd9d;
+    color: rgb(61, 60, 60);
+}
+/*.re{
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}*/
+  
+/* highliting the text */
+
+::selection {
+    color: rgb(238, 238, 238);
+    background: rgb(240, 78, 78);
+}
+
+/* the responsive style*/
+@media screen and (max-width:800px){
+    .tit{
+        padding-top: 130px;
+        font-size: 100px;
+    }
+    li{
+        font-size: 20px;
+        color: whitesmoke;
+    }
+    .cont{
+        display: grid;
+        margin: 10px;
+    }
+    p .cont{
+        margin: 40px;
+        padding:  40px;
+        width: 250px;
+    }
+    img{
+        height: 300px;
+        width: 450px;
+    } 
+    iframe{
+        width:450px;
+        height:315px;
+    }
+    #g{
+        display: grid;
+        width: 100%;
+        margin: 20px;
+    }
+    .titl{
+        font-size: 50px;
+    }
+    #g .ma{
+        width: 90%;
+    }
+    table{
+        transform: translate(0%,30%);
+    }
+    #regi{
+        background-image: url('alexandra-gornago-_B7shfNUXEA-unsplash.jpg');
+    }
+    .regi{
+        width: 450px;
+        height: 700px;
+        padding: 10px 10px 10px 10px;
+    }
+    .ffi{
+        padding-left: 7%;
+    }
+}
+
+
